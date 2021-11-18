@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
 
     /// Decode a base64 encoded string
     /// - Parameter base64: The base64 encoded string
