@@ -28,22 +28,22 @@ public struct StaticError: LocalizedError, Equatable, Hashable {
 
     /// A localized message describing what error occurred.
     public var errorDescription: String? {
-        internalErrorDescription ?? (self as LocalizedError).errorDescription
+        internalErrorDescription ?? dummy.errorDescription
     }
 
     /// A localized message describing the reason for the failure.
     public var failureReason: String? {
-        internalFailureReason ?? (self as LocalizedError).failureReason
+        internalFailureReason ?? dummy.failureReason
     }
 
     /// A localized message describing how one might recover from the failure.
     public var recoverySuggestion: String? {
-        internalRecoverySuggestion ?? (self as LocalizedError).recoverySuggestion
+        internalRecoverySuggestion ?? dummy.recoverySuggestion
     }
 
     /// A localized message providing "help" text if the user requests help.
     public var helpAnchor: String? {
-        internalHelpAnchor ?? (self as LocalizedError).helpAnchor
+        internalHelpAnchor ?? dummy.helpAnchor
     }
 
     // MARK: - Equatable
@@ -63,9 +63,12 @@ public struct StaticError: LocalizedError, Equatable, Hashable {
 
     // MARK: - Private
 
+    private let dummy = DummyError()
+
     private var internalErrorDescription: String?
     private var internalFailureReason: String?
     private var internalRecoverySuggestion: String?
     private var internalHelpAnchor: String?
 
+    private struct DummyError: LocalizedError {}
 }
