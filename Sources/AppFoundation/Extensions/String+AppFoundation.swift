@@ -22,8 +22,26 @@ public extension String {
     /// Encode a string with base64 encoding
     /// - Parameter string: The string
     /// - Returns: The encoded string
-    static func Encode(_ string: String) -> String {
+    static func encode(_ string: String) -> String {
         Data(string.utf8).base64EncodedString()
     }
 
+    /// Localized string for key.
+    static func localized(_ str: String) -> String {
+        str.localized
+    }
+
+    /// Localized string for key.
+    var localized: String {
+        NSLocalizedString(self, comment: "")
+    }
+
+}
+
+extension Optional {
+
+    /// Localized string for key.
+    static func localized(_ str: String) -> String where Wrapped == String {
+        .localized(str)
+    }
 }
