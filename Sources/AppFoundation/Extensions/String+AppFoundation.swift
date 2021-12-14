@@ -30,7 +30,7 @@ public extension String {
     static func localized(_ str: String) -> String {
         str.localized
     }
-    
+
     /// Localized string for key.
     static func localized(_ str: String, _ arguments: CVarArg ...) -> String {
         String(format: str.localized, arguments: arguments)
@@ -49,7 +49,7 @@ extension Optional {
     static func localized(_ str: String) -> String where Wrapped == String {
         .localized(str)
     }
-    
+
     /// Localized string for key.
     static func localized(_ str: String, _ arguments: CVarArg ...) -> String where Wrapped == String {
         .localized(str, arguments)
