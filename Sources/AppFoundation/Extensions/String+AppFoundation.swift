@@ -41,6 +41,23 @@ public extension String {
         NSLocalizedString(self, comment: "")
     }
 
+    var inSnakeCase: String {
+        func processCamalCaseRegex(input: String, pattern: String) -> String? {
+            let regex = try? NSRegularExpression(pattern: pattern, options: [])
+            let range = NSRange(location: 0, length: count)
+            return regex?.stringByReplacingMatches(in: input, options: [], range: range, withTemplate: "$1_$2")
+        }
+        
+        let acronymPattern = "([A-Z]+)([A-Z][a-z]|[0-9])"
+        let normalPattern = "([a-z0-9])([A-Z])"
+        
+        if let temp = processCamalCaseRegex(input: self, pattern: acronymPattern) {
+            return processCamalCaseRegex(input: temp, pattern: normalPattern) ?? lowercased()
+        }
+        
+        return lowercased()
+    }
+    
 }
 
 extension Optional {
