@@ -52,7 +52,7 @@ public extension String {
         let normalPattern = "([a-z0-9])([A-Z])"
         
         if let temp = processCamalCaseRegex(input: self, pattern: acronymPattern) {
-            return processCamalCaseRegex(input: temp, pattern: normalPattern) ?? lowercased()
+            return processCamalCaseRegex(input: temp, pattern: normalPattern)?.lowercased() ?? lowercased()
         }
         
         return lowercased()
