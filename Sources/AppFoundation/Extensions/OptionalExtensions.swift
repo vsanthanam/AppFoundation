@@ -1,5 +1,5 @@
 // AppFoundation
-// Error+AppFoundation.swift
+// OptionalExtensions.swift
 //
 // MIT License
 //
@@ -23,14 +23,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import Combine
 import Foundation
 
-public extension Error {
+public protocol OptionalType {
+    associatedtype Wrapped
+    var asOptional: Wrapped? { get }
+}
 
-    /// A static swift error
-    /// - Parameter message: The error message
-    /// - Returns: The static error
-    static func message(_ message: String? = nil) -> Error {
-        StaticError(errorDescription: message)
+extension Optional: OptionalType {
+    public var asOptional: Wrapped? { self }
+}
+
+public extension Publisher where Output: OptionalType {
+    func filterNil() -> Publishers.CompactMap<Self, Output.Wrapped> {
+        compactMap { input in
+            input.asOptional
+        }
+    }
+}
+
+public extension Publisher {
+    func toOptional() -> Publishers.Map<Self, Output?> {
+        map { $0 }
+    }
+}
+
+public extension Collection where Element: OptionalType {
+    func filterNil() -> [Element.Wrapped] {
+        compactMap(\.asOptional)
     }
 }

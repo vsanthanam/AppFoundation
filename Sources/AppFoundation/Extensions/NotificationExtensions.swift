@@ -1,5 +1,5 @@
 // AppFoundation
-// Notification+AppFoundation.swift
+// NotificationExtensions.swift
 //
 // MIT License
 //
