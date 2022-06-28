@@ -1,0 +1,12 @@
+version: 1
+builder:
+  configs:
+  - platform: ios
+    scheme: AppFoundation
+  - platform: macos-xcodebuild
+    scheme: AppFoundation
+  - platform: tvos
+    scheme: AppFoundation
+  - platform: watchos
+    scheme: AppFoundation
+  - documentation_targets: [AppFoundation]
