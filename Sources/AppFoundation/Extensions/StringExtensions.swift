@@ -1,5 +1,5 @@
 // AppFoundation
-// String+AppFoundation.swift
+// StringExtensions.swift
 //
 // MIT License
 //
