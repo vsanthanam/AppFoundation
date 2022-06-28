@@ -16,7 +16,7 @@ To add AppFoundation as a dependency to an existing Swift package, add the follo
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/vsanthanam/AppFoundation.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/vsanthanam/AppFoundation.git", from: "0.0.0")
 ]
 ```
 

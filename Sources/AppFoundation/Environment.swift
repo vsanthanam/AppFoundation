@@ -200,7 +200,7 @@ public enum BaseEnvironment<T> where T: EnvironmentVariable {
         private let ambiguousValue: String
     }
 
-    fileprivate static var mappedEnvironment: [String: Value] {
+    private static var mappedEnvironment: [String: Value] {
         ProcessInfo.processInfo.mappedEnvironment()
     }
 }
