@@ -30,7 +30,7 @@ Other distribution mechanisms like CocoaPods or Carthage may be added in the fut
 Additional installation instructions are available on the [Swift Package Index](https://swiftpackageindex.com/vsanthanam/AppFoundation)
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fvsanthanam%2FAppFoundation%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/vsanthanam/AppFoundation)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fvsanthanam%2FAppFoundatione%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/vsanthanam/AppFoundation)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fvsanthanam%2FAppFoundation%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/vsanthanam/AppFoundation)
 
 Explore [the documentation](https://vsanthanam.github.io/AppFoundation/docs/documentation/appfoundation) for more details.
 
